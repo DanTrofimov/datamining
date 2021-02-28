@@ -2,6 +2,7 @@ from pprint import pprint
 import vk_api
 import re
 
+import psycopg2 as psy
 import pandas as pd
 import matplotlib.pyplot as plt
 import vk_api
@@ -102,4 +103,26 @@ plt.show()
 
 # logs
 for word in words_dict:
-    print(word.ljust(20), words_dict[word])
+    print(len(word), word.ljust(20), words_dict[word])
+
+# database insert
+conn = psy.connect(
+    dbname='manager',
+    user='postgres',
+    password='admin',
+    host='localhost',
+    port=5432,
+)
+cur = conn.cursor()
+cur.execute("""SELECT datname from pg_database""")
+
+values = ',\n'.join(["""('{0}', {1})""".format(
+    word,
+    counter,
+) for word, counter in words_dict.items()])
+
+cur.execute("""INSERT INTO words (word, count) VALUES 
+{0}""".format(values))
+conn.commit()
+cur.close()
+conn.close()
