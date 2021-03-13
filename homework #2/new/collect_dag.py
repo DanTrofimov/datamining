@@ -32,5 +32,5 @@ tags=['vk_api'],
 
 BashOperator(
 task_id='collect_task',
-bash_command='python3 /opt/DataMiningTasks/Datamining-Course2-2021/DataPiplineTask/DataPiplineTask.py 200 itis_kfu mydatabase.cdwb7v1ldkf1.us-east-1.rds.amazonaws.com postgres qwerty016 postgres 5432',
+bash_command='python3 /opt/datamining/homework #2/new/DataPiplineTask.py 200 itis_kfu database-1.c5y5s391niz5.us-east-1.rds.amazonaws.com postgres qwerty007 postgres 5432',
 dag=dag)
