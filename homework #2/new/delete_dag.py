@@ -30,5 +30,5 @@ tags=['vk_api'],
 
 BashOperator(
 task_id='cleandb_task',
-bash_command='python3 /opt/datamining/homework #2/new/CleanDbScript.py database-1.c5y5s391niz5.us-east-1.rds.amazonaws.com postgres qwerty007 postgres 5432',
+bash_command='python3 /opt/datamining/homework #2/new/CleanDbScript.py database-2.c5y5s391niz5.us-east-1.rds.amazonaws.com postgres qwerty007 postgres 5432',
 dag=dag)
