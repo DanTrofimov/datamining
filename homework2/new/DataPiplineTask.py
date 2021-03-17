@@ -3,6 +3,11 @@
 
 # In[5]:
 # !pip install psycopg2
+!pip install psycopg2
+!pip install pandas
+!pip install vk_api
+!pip install matplotlib
+
 import psycopg2
 from psycopg2 import *
 

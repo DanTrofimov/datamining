@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+!pip install psycopg2
+
 # In[1]:
 import sys
 
