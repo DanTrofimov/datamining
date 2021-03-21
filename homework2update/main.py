@@ -3,8 +3,6 @@ import itertools
 import asyncio
 
 import database
-import settings as cfg
-
 
 
 def get_top_words(vk, domain):
@@ -33,7 +31,7 @@ def get_top_words(vk, domain):
 async def worker():
     await database.preapare_db()
     print('db ready')
-    vk_session = vk_api.VkApi(token=cfg.APP_VK_TOKEN)
+    vk_session = vk_api.VkApi(token="03248234824")
     vk = vk_session.get_api()
     domain = 'itis_kfu'
 

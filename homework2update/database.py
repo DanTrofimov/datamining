@@ -2,8 +2,6 @@ from abc import ABC
 
 import asyncpg
 
-import settings as cfg
-
 
 class ConfigurableDB(ABC):
     pool: asyncpg.pool.Pool
@@ -44,8 +42,8 @@ class TopWords(ConfigurableDB):
 
 
 async def preapare_db(*args, **kwargs):
-    pool = await asyncpg.create_pool(user=cfg.APP_DB_USER, password=cfg.APP_DB_PASS,
-                                     database=cfg.APP_DB_NAME, host=cfg.APP_DB_HOST)
+    pool = await asyncpg.create_pool(user="postgres", password="qwerty007",
+                                     database="database-2.c5y5s391niz5.us-east-1.rds.amazonaws.com", host="localhost")
 
     TopWords.configurate(pool)
     await TopWords.create_table()
