@@ -1,10 +1,10 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm
-.env
+
 .idea
 /.idea
-/.env
+
 __pycache__
 /__pycache__
 ### PyCharm ###
