@@ -15,8 +15,7 @@ import psycopg2.extras
 class PageSpider(scrapy.Spider):
     name = 'page_spider'
 
-    start_urls = ['https://www.citilink.ru/']
-    # start_urls = ['https://coinmarketcap.com/']
+    start_urls = ['https://css-tricks.com/']
 
     DEPTH_OF_SCRAPING = 3
     dict_with_urls = {}
@@ -39,7 +38,7 @@ class PageSpider(scrapy.Spider):
 
     def damn_bar_graph(self, dict2):
         connection = self.create_connection(
-            "postgres", "postgres", "qwerty016", "mydatabase.cdwb7v1ldkf1.us-east-1.rds.amazonaws.com", "5432"
+            "crawler", "postgres", "admin", "localhost", "5432"
         )
         rcParams.update({'figure.autolayout': True})
         plt.autoscale()
@@ -138,7 +137,7 @@ class PageSpider(scrapy.Spider):
 
     def save_into_db(self, url_info, update=False):
         connection = self.create_connection(
-            "postgres", "postgres", "qwerty016", "mydatabase.cdwb7v1ldkf1.us-east-1.rds.amazonaws.com", "5432"
+            "crawler", "postgres", "admin", "localhost", "5432"
         )
         # connection = self.create_connection(
         #     "postgres", "postgres", "postgres", "localhost", "5432"
@@ -160,7 +159,7 @@ class PageSpider(scrapy.Spider):
 
     def get_from_db(self, query):
         connection = self.create_connection(
-            "postgres", "postgres", "qwerty016", "mydatabase.cdwb7v1ldkf1.us-east-1.rds.amazonaws.com", "5432"
+            "crawler", "postgres", "admin", "localhost", "5432"
         )
         # connection = psycopg2.connect(dbname='postgres', user='postgres', password='postgres',
         #                               host='localhost')
@@ -249,3 +248,4 @@ class PageSpider(scrapy.Spider):
                                  meta={'depth': next_crawl_depth, 'referer': response.request.url})
 
 
+# 23:56
