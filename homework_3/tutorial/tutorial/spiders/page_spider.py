@@ -15,7 +15,7 @@ import psycopg2.extras
 class PageSpider(scrapy.Spider):
     name = 'page_spider'
 
-    start_urls = ['https://css-tricks.com/']
+    start_urls = ['https://overreacted.io/']
 
     DEPTH_OF_SCRAPING = 3
     dict_with_urls = {}
